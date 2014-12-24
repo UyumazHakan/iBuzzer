@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WHl-mf-yzb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -137,7 +138,80 @@
                     <view key="view" contentMode="scaleToFill" id="z7g-eh-zkh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-5J-Iyy">
+                                <rect key="frame" x="16" y="323" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPO-KT-cKD">
+                                <rect key="frame" x="16" y="209" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-9O-Ia5">
+                                <rect key="frame" x="16" y="247" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaB-oZ-4Vt">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-qy-qgH">
+                                <rect key="frame" x="16" y="361" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFF-7f-dVA">
+                                <rect key="frame" x="16" y="171" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-dg-jTl">
+                                <rect key="frame" x="272" y="399" width="57" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emC-K2-ohB">
+                                <rect key="frame" x="276" y="562" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SN1-qy-qgH" firstAttribute="top" secondItem="Mip-5J-Iyy" secondAttribute="bottom" constant="8" id="0Zh-Jf-8M5"/>
+                            <constraint firstItem="IaB-oZ-4Vt" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="3xM-rG-KuP"/>
+                            <constraint firstItem="eSN-dg-jTl" firstAttribute="top" secondItem="SN1-qy-qgH" secondAttribute="bottom" constant="8" id="4Ny-Se-AO1"/>
+                            <constraint firstAttribute="centerX" secondItem="emC-K2-ohB" secondAttribute="centerX" id="62U-xW-u6u"/>
+                            <constraint firstAttribute="centerX" secondItem="eSN-dg-jTl" secondAttribute="centerX" id="85k-eS-JLI"/>
+                            <constraint firstItem="CFF-7f-dVA" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="BKO-P3-rNH"/>
+                            <constraint firstAttribute="centerX" secondItem="SN1-qy-qgH" secondAttribute="centerX" constant="-0.5" id="CNt-8U-f6i"/>
+                            <constraint firstItem="Mip-5J-Iyy" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="D4U-1L-owV"/>
+                            <constraint firstItem="JPO-KT-cKD" firstAttribute="top" secondItem="CFF-7f-dVA" secondAttribute="bottom" constant="8" id="EGT-nH-pXy"/>
+                            <constraint firstAttribute="centerX" secondItem="p5p-9O-Ia5" secondAttribute="centerX" constant="-0.5" id="Ix5-cO-Ic7"/>
+                            <constraint firstAttribute="centerX" secondItem="JPO-KT-cKD" secondAttribute="centerX" constant="-0.5" id="K4A-SH-gSm"/>
+                            <constraint firstItem="SN1-qy-qgH" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="L2S-Ca-Btl"/>
+                            <constraint firstItem="p5p-9O-Ia5" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="NFy-LT-VTP"/>
+                            <constraint firstItem="UZe-oz-xOc" firstAttribute="top" secondItem="emC-K2-ohB" secondAttribute="bottom" constant="8" id="Qta-Jh-EoJ"/>
+                            <constraint firstItem="p5p-9O-Ia5" firstAttribute="top" secondItem="JPO-KT-cKD" secondAttribute="bottom" constant="8" id="Rdr-Vj-SiY"/>
+                            <constraint firstItem="SN1-qy-qgH" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="TFe-u3-yEn"/>
+                            <constraint firstAttribute="centerX" secondItem="CFF-7f-dVA" secondAttribute="centerX" id="UqW-fP-CsS"/>
+                            <constraint firstItem="JPO-KT-cKD" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="ZTA-5i-7Vx"/>
+                            <constraint firstItem="Mip-5J-Iyy" firstAttribute="top" secondItem="IaB-oZ-4Vt" secondAttribute="bottom" constant="8" id="fIT-zC-VTY"/>
+                            <constraint firstItem="CFF-7f-dVA" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="gvY-JL-jTf"/>
+                            <constraint firstItem="IaB-oZ-4Vt" firstAttribute="top" secondItem="p5p-9O-Ia5" secondAttribute="bottom" constant="8" id="hJm-G6-gWf"/>
+                            <constraint firstItem="JPO-KT-cKD" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="hKM-9r-TE8"/>
+                            <constraint firstAttribute="centerX" secondItem="IaB-oZ-4Vt" secondAttribute="centerX" constant="-0.5" id="jid-K6-PJ4"/>
+                            <constraint firstAttribute="centerX" secondItem="Mip-5J-Iyy" secondAttribute="centerX" constant="-0.5" id="pQC-AC-GmR"/>
+                            <constraint firstItem="IaB-oZ-4Vt" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="pxI-JW-huL"/>
+                            <constraint firstItem="p5p-9O-Ia5" firstAttribute="leading" secondItem="z7g-eh-zkh" secondAttribute="leadingMargin" id="qbg-BS-py6"/>
+                            <constraint firstItem="Mip-5J-Iyy" firstAttribute="trailing" secondItem="z7g-eh-zkh" secondAttribute="trailingMargin" id="sgF-DJ-hz5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5g-H0-BDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
