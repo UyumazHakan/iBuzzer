@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,17 +15,52 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-7a-8Vy">
+                                <rect key="frame" x="252" y="93" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-0w-gy1">
+                                <rect key="frame" x="252" y="163" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rV5-3Q-SWr">
+                                <rect key="frame" x="272" y="519" width="57" height="30"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIp-Ef-oeJ">
+                                <rect key="frame" x="277" y="481" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rV5-3Q-SWr" secondAttribute="bottom" constant="51" id="8WH-Mx-rhz"/>
+                            <constraint firstItem="pT1-0w-gy1" firstAttribute="top" secondItem="cBb-7a-8Vy" secondAttribute="bottom" constant="40" id="JHt-Dq-DsB"/>
+                            <constraint firstAttribute="centerX" secondItem="cBb-7a-8Vy" secondAttribute="centerX" constant="-0.5" id="ar1-uC-jdy"/>
+                            <constraint firstItem="rV5-3Q-SWr" firstAttribute="top" secondItem="XIp-Ef-oeJ" secondAttribute="bottom" constant="8" id="cbw-Ux-Ddx"/>
+                            <constraint firstAttribute="centerX" secondItem="XIp-Ef-oeJ" secondAttribute="centerX" constant="4" id="fbP-gT-VfZ"/>
+                            <constraint firstAttribute="centerX" secondItem="rV5-3Q-SWr" secondAttribute="centerX" id="ftv-gN-deC"/>
+                            <constraint firstItem="cBb-7a-8Vy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="73" id="t7e-Gy-8KH"/>
+                            <constraint firstAttribute="centerX" secondItem="pT1-0w-gy1" secondAttribute="centerX" constant="-0.5" id="ys0-MN-gl1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="440" y="407"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Restaurants View Controller-->
         <scene sceneID="gzQ-1h-jV8">
             <objects>
-                <tableViewController id="HZY-R6-q5t" sceneMemberID="viewController">
+                <tableViewController id="HZY-R6-q5t" customClass="RestaurantsViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HZH-0I-rvk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="440" y="1081"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="yKG-EH-l1Z">
             <objects>
-                <tableViewController id="HfD-3q-15c" sceneMemberID="viewController">
+                <tableViewController id="HfD-3q-15c" customClass="MenuViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="f6c-DB-aHG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="-289" y="1081"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="gpQ-NK-urj">
             <objects>
-                <viewController id="WHl-mf-yzb" sceneMemberID="viewController">
+                <viewController id="WHl-mf-yzb" customClass="RegisterViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Swe-I4-hgS"/>
                         <viewControllerLayoutGuide type="bottom" id="UZe-oz-xOc"/>
