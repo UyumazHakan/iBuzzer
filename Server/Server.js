@@ -29,7 +29,6 @@ app.post("/auth", function (req, res) {
     });
     req.on('end', function () {
         var post = qs.parse(body);
-        console.log(JSON.stringify(post))
         database.auth(post["email"], post["pass"], res)
     });
 
@@ -79,7 +78,32 @@ app.post("/new_request", function (req, res) {
     });
     req.on('end', function () {
         var post = qs.parse(body);
-        console.log(JSON.stringify(post))
         database.request(post["user"], post["restaurant"], res)
+    });
+})
+app.post("/done_request", function (req, res) {
+    var body = '';
+    req.on('data', function (data) {
+        body += data;
+        if (body.length > 1e6)
+            req.connection.destroy()
+    });
+    req.on('end', function () {
+        var post = qs.parse(body)
+        database.doneRequest(post["requestId"])
+        res.end(200)
+    });
+})
+app.post("/register", function (req, res) {
+    var body = '';
+    req.on('data', function (data) {
+        body += data;
+        if (body.length > 1e6)
+            req.connection.destroy();
+    });
+    req.on('end', function () {
+        var post = qs.parse(body);
+        database.register(post["username"], post["name"], post["surname"], post["email"], post["password"])
+        res.end(200)
     });
 })

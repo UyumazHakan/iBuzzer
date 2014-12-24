@@ -4,9 +4,9 @@ var GET_RESTAURANTS_SQL = "SELECT * FROM RESTAURANT"
 var GET_MENU_SQL = "SELECT * FROM MENU WHERE RESTAURANT=?"
 var GET_MENU_SECTION_SQL = "SELECT * FROM MENU_SECTION WHERE MENU=?"
 var GET_ITEMS_SQL = "SELECT * FROM SECTION_ITEM WHERE MENU_SECTION=?"
-var ADD_REQUEST_SQL = "INSERT INTO PENDING_REQUEST SET ?"
+var ADD_REQUEST_SQL = "INSERT INTO REQUEST SET ?"
+var DONE_REQUEST_SQL = "UPDATE REQUEST SET IS_DONE=1 WHERE ID=?"
 var mysql = require('mysql')
-var async = require('async')
 exports.restaurants = getRestaurants
 exports.auth = validateUserAuth
 exports.register = registerUser
@@ -14,6 +14,7 @@ exports.menu = getMenu
 exports.menuSection = getMenuSection
 exports.items = getItems
 exports.request = addRequest
+exports.doneRequest = doneRequest
 var connection = mysql.createConnection(({
     host: 'localhost',
     user: 'node',
@@ -30,7 +31,7 @@ function validateUserAuth(email, pass, res) {
         if (rows.length > 0) {
             res.end(JSON.stringify(rows[0]))
         } else
-            res.end()
+            res.end(200)
     })
 }
 function registerUser(username, name, surname, email, pass) {
@@ -84,9 +85,15 @@ function getItems(sectionID, res) {
     })
 }
 function addRequest(userID, restaurantID, res) {
-    var values = {USER: userID, RESTAURANT: restaurantID, TIME: new Date()}
+    var values = {USER: userID, RESTAURANT: restaurantID, TIME: new Date(), IS_DONE: 0}
     connection.query(ADD_REQUEST_SQL, values, function (err, results) {
         if (err) throw err
         res.end(JSON.stringify(results.insertId))
+    })
+}
+function doneRequest(id) {
+    var values = [id]
+    connection.query(DONE_REQUEST_SQL, values, function (err, results) {
+        if (err) throw err
     })
 }
