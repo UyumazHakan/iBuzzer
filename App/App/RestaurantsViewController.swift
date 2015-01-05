@@ -10,9 +10,15 @@ import UIKit
 
 class RestaurantsViewController: UITableViewController {
     
+    let domain = "http://localhost"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        request.POST(domain+"/restaurants", parameters: [], success: {(response: HTTPResponse) in
+            
+            },failure: {(error: NSError, response: HTTPResponse?) in
+                print(response)
+        })
     }
     
     override func didReceiveMemoryWarning() {

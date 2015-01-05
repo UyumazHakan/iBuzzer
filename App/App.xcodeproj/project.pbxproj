@@ -18,6 +18,10 @@
 		E74BB27E1A4B0F9E0079644F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB27D1A4B0F9E0079644F /* MenuViewController.swift */; };
 		E74BB2801A4B1A630079644F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB27F1A4B1A630079644F /* User.swift */; };
 		E74BB2821A4B1C100079644F /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB2811A4B1C100079644F /* JSON.swift */; };
+		E7C3F79B1A5AB5320033317E /* HTTPRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7971A5AB5320033317E /* HTTPRequestSerializer.swift */; };
+		E7C3F79C1A5AB5320033317E /* HTTPResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7981A5AB5320033317E /* HTTPResponseSerializer.swift */; };
+		E7C3F79D1A5AB5320033317E /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7991A5AB5320033317E /* HTTPTask.swift */; };
+		E7C3F79E1A5AB5320033317E /* HTTPUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F79A1A5AB5320033317E /* HTTPUpload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		E74BB27D1A4B0F9E0079644F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E74BB27F1A4B1A630079644F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E74BB2811A4B1C100079644F /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		E7C3F7971A5AB5320033317E /* HTTPRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPRequestSerializer.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPRequestSerializer.swift"; sourceTree = "<group>"; };
+		E7C3F7981A5AB5320033317E /* HTTPResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPResponseSerializer.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPResponseSerializer.swift"; sourceTree = "<group>"; };
+		E7C3F7991A5AB5320033317E /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPTask.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPTask.swift"; sourceTree = "<group>"; };
+		E7C3F79A1A5AB5320033317E /* HTTPUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPUpload.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPUpload.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,10 @@
 				E74BB27B1A4B0F780079644F /* RestaurantsViewController.swift */,
 				E74BB27D1A4B0F9E0079644F /* MenuViewController.swift */,
 				E74BB27F1A4B1A630079644F /* User.swift */,
+				E7C3F7971A5AB5320033317E /* HTTPRequestSerializer.swift */,
+				E7C3F7981A5AB5320033317E /* HTTPResponseSerializer.swift */,
+				E7C3F7991A5AB5320033317E /* HTTPTask.swift */,
+				E7C3F79A1A5AB5320033317E /* HTTPUpload.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -228,11 +240,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74BB27A1A4B0F550079644F /* RegisterViewController.swift in Sources */,
+				E7C3F79B1A5AB5320033317E /* HTTPRequestSerializer.swift in Sources */,
 				E74BB2821A4B1C100079644F /* JSON.swift in Sources */,
 				E74BB27E1A4B0F9E0079644F /* MenuViewController.swift in Sources */,
 				E74BB2801A4B1A630079644F /* User.swift in Sources */,
+				E7C3F79C1A5AB5320033317E /* HTTPResponseSerializer.swift in Sources */,
+				E7C3F79D1A5AB5320033317E /* HTTPTask.swift in Sources */,
 				E74BB27C1A4B0F780079644F /* RestaurantsViewController.swift in Sources */,
 				E74BB2781A4B0EEE0079644F /* LoginViewController.swift in Sources */,
+				E7C3F79E1A5AB5320033317E /* HTTPUpload.swift in Sources */,
 				E74BB2581A4B0BB20079644F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +441,7 @@
 				E74BB2731A4B0BB20079644F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E74BB2741A4B0BB20079644F /* Build configuration list for PBXNativeTarget "AppTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +450,7 @@
 				E74BB2761A4B0BB20079644F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
