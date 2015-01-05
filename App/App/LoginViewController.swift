@@ -13,7 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    let domain = "http://localhost"
+    var user : User!
+    
+    let domain = "http://localhost:5000"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,17 +25,39 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func login(sender: AnyObject) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Login" {
+            login()
+            let vc : RestaurantsViewController = segue.destinationViewController as RestaurantsViewController
+            vc.user = user
+            
+            
+        }
+    }
+    func login() {
         var emailText = email.text
         var passwordText = password.text
         var request = HTTPTask()
-        let params: Dictionary<String,AnyObject> = ["email": emailText, "password": passwordText]
-        request.POST(domain+"/login", parameters: params, success: {(response: HTTPResponse) in
-            
+        let params: Dictionary<String,AnyObject> = ["email": emailText, "pass": passwordText]
+        request.POST(domain+"/auth", parameters: params, success: {(response: HTTPResponse) in
+            let data = response.responseObject as NSData
+            let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+            let json = JSON.parse(str!)
+            print("--------RESPONSE--------")
+            print(str)
+            self.handleResponse(json)
             },failure: {(error: NSError, response: HTTPResponse?) in
-                print(response)
+                let data = response!.responseObject as NSData
+                let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+                print("--------ERRORS--------")
+                print(error)
+                print("--------RESPONSE--------")
+                print(str)
         })
+    }
+    
+    func handleResponse(response: JSON) {
+        user = User(json: response)
     }
     
 }

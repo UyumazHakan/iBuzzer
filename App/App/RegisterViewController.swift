@@ -15,8 +15,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
+
     
-    let domain = "http://localhost"
+    let domain = "http://localhost:5000"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,14 +38,24 @@ class RegisterViewController: UIViewController {
         var request = HTTPTask()
         let params: Dictionary<String,AnyObject> = ["username": usernameText, "name": nameText, "surname": surnameText, "email": emailText, "password": passwordText]
         request.POST(domain+"/register", parameters: params, success: {(response: HTTPResponse) in
-            
+            let data = response.responseObject as NSData
+            let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+            print("--------RESPONSE--------")
+            print(str)
             },failure: {(error: NSError, response: HTTPResponse?) in
-                print(response)
+                let data = response!.responseObject as NSData
+                let str = NSString(data: data, encoding: NSUTF8StringEncoding)
+                print("--------ERRORS--------")
+                print(error)
+                print("--------RESPONSE--------")
+                print(str)
         })
     }
     @IBAction func cancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+
     
 }
 

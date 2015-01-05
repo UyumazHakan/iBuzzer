@@ -17,8 +17,9 @@ exports.request = addRequest
 exports.doneRequest = doneRequest
 var connection = mysql.createConnection(({
     host: 'localhost',
-    user: 'node',
-    password: 'node',
+    port: 8889,
+    user: 'root',
+    password: '123',
     database: 'ibuzzer'
 }))
 connection.connect();
@@ -30,8 +31,9 @@ function validateUserAuth(email, pass, res) {
         console.log(email + " " + pass)
         if (rows.length > 0) {
             res.end(JSON.stringify(rows[0]))
+            console.log(JSON.stringify(rows[0]))
         } else
-            res.end(200)
+            res.end(JSON.stringify([200]))
     })
 }
 function registerUser(username, name, surname, email, pass) {
@@ -41,6 +43,7 @@ function registerUser(username, name, surname, email, pass) {
     })
 }
 function getRestaurants(res) {
+    console.log("getRestaurants(res)")
     var results = []
     connection.query(GET_RESTAURANTS_SQL, {}, function (err, rows, fields) {
         if (err) throw err

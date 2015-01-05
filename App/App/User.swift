@@ -16,10 +16,10 @@ class User {
     let email : String
     
     init(json : JSON) {
-        id = json["id"].asInt!
-        username = json["username"].asString!
-        name = json["name"].asString!
-        surname = json["surname"].asString!
-        email = json["email"].asString!
+        id = json["ID"].asInt!
+        username = json["USERNAME"].asString!
+        name = json["NAME"].asString!
+        surname = json["SURNAME"].asString!
+        email = json["EMAIL"].asString!
     }
 }
