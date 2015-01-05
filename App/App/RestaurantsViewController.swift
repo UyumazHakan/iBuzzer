@@ -12,7 +12,6 @@ class RestaurantsViewController: UITableViewController, UITableViewDelegate, UIT
     
     let domain = "http://localhost:5000"
     
-    var user: User!
     var restaurants = [Restaurant]()
     
     override func viewDidLoad() {
@@ -44,6 +43,17 @@ class RestaurantsViewController: UITableViewController, UITableViewDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Menu" {
+            let cell = sender as UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let restaurant = restaurants[indexPath!.item]
+            let vc = segue.destinationViewController as MenuViewController
+            vc.restaurant = restaurant
+            
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("COUNT:" , restaurants.count)
         return restaurants.count
@@ -53,8 +63,8 @@ class RestaurantsViewController: UITableViewController, UITableViewDelegate, UIT
         let cell = tableView.dequeueReusableCellWithIdentifier("Restaurant") as UITableViewCell
         let restaurant = restaurants[indexPath.item]
         println("Cell:" + restaurant.name)
-        cell.textLabel!.text = restaurant.name
-        cell.detailTextLabel!.text = restaurant.type
+        cell.textLabel!.text = restaurant.type
+        cell.detailTextLabel!.text = restaurant.name
         return cell
     }
     func createRestaurantList(jsonList: [JSON]){

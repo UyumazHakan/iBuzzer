@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    var user : User!
     
     let domain = "http://localhost:5000"
     override func viewDidLoad() {
@@ -28,9 +27,6 @@ class LoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Login" {
             login()
-            let vc : RestaurantsViewController = segue.destinationViewController as RestaurantsViewController
-            vc.user = user
-            
             
         }
     }
@@ -57,7 +53,7 @@ class LoginViewController: UIViewController {
     }
     
     func handleResponse(response: JSON) {
-        user = User(json: response)
+        UserManager.sharedInstance.user = User(json: response)
     }
     
 }

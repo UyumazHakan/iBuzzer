@@ -3,7 +3,7 @@ var USER_REG_SQL = "INSERT INTO USER SET ?"
 var GET_RESTAURANTS_SQL = "SELECT * FROM RESTAURANT"
 var GET_MENU_SQL = "SELECT * FROM MENU WHERE RESTAURANT=?"
 var GET_MENU_SECTION_SQL = "SELECT * FROM MENU_SECTION WHERE MENU=?"
-var GET_ITEMS_SQL = "SELECT * FROM SECTION_ITEM WHERE MENU_SECTION=?"
+var GET_ITEMS_SQL = "SELECT * FROM SECTION_ITEM WHERE RESTAURANT=?"
 var ADD_REQUEST_SQL = "INSERT INTO REQUEST SET ?"
 var DONE_REQUEST_SQL = "UPDATE REQUEST SET IS_DONE=1 WHERE ID=?"
 var mysql = require('mysql')
@@ -76,14 +76,16 @@ function getMenuSection(menuID, res) {
         res.end(JSON.stringify(results))
     })
 }
-function getItems(sectionID, res) {
+function getItems(restaurantID, res) {
     var results = []
-    connection.query(GET_ITEMS_SQL, [sectionID], function (err, rows, fields) {
+    console.log(restaurantID)
+    connection.query(GET_ITEMS_SQL, [restaurantID], function (err, rows, fields) {
         if (err) throw err
         for (var i = 0; i < rows.length; i++) {
             var result = {ID: rows[i].ID, NAME: rows[i].NAME, PRICE: rows[i].PRICE}
             results.push(result)
         }
+        console.log(JSON.stringify(results))
         res.end(JSON.stringify(results))
     })
 }

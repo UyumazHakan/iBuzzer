@@ -20,6 +20,7 @@
 		E74BB2821A4B1C100079644F /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB2811A4B1C100079644F /* JSON.swift */; };
 		E75BA0611A5AC5980063E9DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0601A5AC5980063E9DD /* Menu.swift */; };
 		E75BA0631A5AC5A60063E9DD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0621A5AC5A60063E9DD /* Restaurant.swift */; };
+		E75BA0651A5B02CE0063E9DD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0641A5B02CE0063E9DD /* UserManager.swift */; };
 		E7C3F79B1A5AB5320033317E /* HTTPRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7971A5AB5320033317E /* HTTPRequestSerializer.swift */; };
 		E7C3F79C1A5AB5320033317E /* HTTPResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7981A5AB5320033317E /* HTTPResponseSerializer.swift */; };
 		E7C3F79D1A5AB5320033317E /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C3F7991A5AB5320033317E /* HTTPTask.swift */; };
@@ -54,6 +55,7 @@
 		E74BB2811A4B1C100079644F /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		E75BA0601A5AC5980063E9DD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		E75BA0621A5AC5A60063E9DD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		E75BA0641A5B02CE0063E9DD /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E7C3F7971A5AB5320033317E /* HTTPRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPRequestSerializer.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPRequestSerializer.swift"; sourceTree = "<group>"; };
 		E7C3F7981A5AB5320033317E /* HTTPResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPResponseSerializer.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPResponseSerializer.swift"; sourceTree = "<group>"; };
 		E7C3F7991A5AB5320033317E /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPTask.swift; path = "../../../../Downloads/SwiftHTTP-master/HTTPTask.swift"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				E7C3F79A1A5AB5320033317E /* HTTPUpload.swift */,
 				E75BA0601A5AC5980063E9DD /* Menu.swift */,
 				E75BA0621A5AC5A60063E9DD /* Restaurant.swift */,
+				E75BA0641A5B02CE0063E9DD /* UserManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				E75BA0631A5AC5A60063E9DD /* Restaurant.swift in Sources */,
 				E74BB27A1A4B0F550079644F /* RegisterViewController.swift in Sources */,
+				E75BA0651A5B02CE0063E9DD /* UserManager.swift in Sources */,
 				E7C3F79B1A5AB5320033317E /* HTTPRequestSerializer.swift in Sources */,
 				E74BB2821A4B1C100079644F /* JSON.swift in Sources */,
 				E74BB27E1A4B0F9E0079644F /* MenuViewController.swift in Sources */,

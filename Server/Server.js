@@ -33,7 +33,7 @@ app.post("/auth", function (req, res) {
     });
 
 });
-app.get("/menu", function (req, res) {
+app.post("/menu", function (req, res) {
     var body = '';
     req.on('data', function (data) {
         body += data;
@@ -42,7 +42,9 @@ app.get("/menu", function (req, res) {
     });
     req.on('end', function () {
         var get = qs.parse(body);
-        database.menu(get["restaurant"], res)
+        console.log("-----")
+        console.log(JSON.stringify(get))
+        database.items(get["restaurant"], res)
     });
 });
 app.get("/section", function (req, res) {

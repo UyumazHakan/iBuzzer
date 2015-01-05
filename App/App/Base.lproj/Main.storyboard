@@ -43,7 +43,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="HZY-R6-q5t" kind="show" identifier="Login" id="lz3-N2-SAq"/>
+                                    <segue destination="Od4-01-NVB" kind="showDetail" identifier="Login" id="7U3-2h-gdk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,7 +97,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="HfD-3q-15c" kind="show" trigger="accessoryAction" id="eYG-Yc-EXE"/>
+                                    <segue destination="HfD-3q-15c" kind="show" identifier="Menu" id="d96-HS-DCj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -121,10 +121,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="40o-oy-V8t">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item" textLabel="GKM-aW-n0m" detailTextLabel="2fG-9T-lOQ" style="IBUITableViewCellStyleValue2" id="40o-oy-V8t">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="40o-oy-V8t" id="GSg-9J-Hyn">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GKM-aW-n0m">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2fG-9T-lOQ">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -260,7 +274,4 @@
             <point key="canvasLocation" x="1125" y="407"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lz3-N2-SAq"/>
-    </inferredMetricsTieBreakers>
 </document>
