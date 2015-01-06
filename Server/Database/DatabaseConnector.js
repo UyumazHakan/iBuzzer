@@ -6,7 +6,7 @@ var GET_MENU_SECTION_SQL = "SELECT * FROM MENU_SECTION WHERE MENU=?"
 var GET_ITEMS_SQL = "SELECT * FROM SECTION_ITEM WHERE RESTAURANT=?"
 var ADD_REQUEST_SQL = "INSERT INTO REQUEST SET ?"
 var DONE_REQUEST_SQL = "UPDATE REQUEST SET IS_DONE=1 WHERE ID=?"
-var USER_REQUEST_SQL = "SELECT * FROM REQUEST WHERE IS_DONE=0 AND USER=?"
+var USER_REQUEST_SQL = "SELECT * FROM REQUEST WHERE USER=?"
 var mysql = require('mysql')
 exports.restaurants = getRestaurants
 exports.auth = validateUserAuth
@@ -16,6 +16,7 @@ exports.menuSection = getMenuSection
 exports.items = getItems
 exports.request = addRequest
 exports.doneRequest = doneRequest
+exports.userRequest = getRequest
 var connection = mysql.createConnection(({
     host: 'localhost',
     port: 8889,
@@ -103,12 +104,13 @@ function doneRequest(id) {
         if (err) throw err
     })
 }
-function getRequest(userID) {
-    var values = [userID]
+function getRequest(userID, res) {
+    var values = [""+userID]
+    console.log("getReuest " +userID)
     connection.query(USER_REQUEST_SQL, values, function (err, rows, fields) {
         if (err) throw err
-        var result = {ID: rows[0].ID, USER: rows[0].USER, RESTAURANT: rows[0].RESTAURANT}
-        console.log(JSON.stringify(results))
-        res.end(JSON.stringify(results))
+        var result = {ID: rows[0].ID, USER: rows[0].USER, RESTAURANT: rows[0].RESTAURANT, IS_DONE: rows[0].IS_DONE}
+        console.log(JSON.stringify(result))
+        res.end(JSON.stringify(result))
     })
 }

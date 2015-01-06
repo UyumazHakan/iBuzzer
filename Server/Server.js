@@ -105,7 +105,7 @@ app.post("/user_request", function (req, res) {
     });
     req.on('end', function () {
         var post = qs.parse(body)
-        database.userRequest(post["user"])
+        database.userRequest(post["user"], res)
         res.end(200)
     });
 })
