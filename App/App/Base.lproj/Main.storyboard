@@ -137,30 +137,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn5-4N-OJh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your Order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn5-4N-OJh">
                                 <rect key="frame" x="258" y="163" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="165-bt-GpA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="165-bt-GpA">
                                 <rect key="frame" x="165" y="380" width="269" height="155"/>
                                 <color key="tintColor" red="0.12257039991188967" green="1" blue="0.085716698822681403" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
                                 <color key="textColor" red="0.14676979485352526" green="0.49184782608695654" blue="0.089966979670034475" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPB-6B-IO8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Restaurant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPB-6B-IO8">
                                 <rect key="frame" x="16" y="279" width="568" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preparing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5V-Yd-sjA">
+                                <rect key="frame" x="57" y="404" width="484" height="107"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                <color key="textColor" red="0.58031165081521741" green="0.21558983381098509" blue="0.21842264964706284" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.14956451914334945" green="1" blue="0.093246298164844643" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="L5I-bM-9Jr" firstAttribute="top" secondItem="UPB-6B-IO8" secondAttribute="bottom" constant="280" id="L2N-uq-XU4"/>
+                            <constraint firstItem="UPB-6B-IO8" firstAttribute="top" secondItem="Yn5-4N-OJh" secondAttribute="bottom" constant="95" id="Nnx-vb-c0K"/>
+                            <constraint firstItem="L5I-bM-9Jr" firstAttribute="top" secondItem="M5V-Yd-sjA" secondAttribute="bottom" constant="89" id="PG4-oS-oYF"/>
+                            <constraint firstItem="L5I-bM-9Jr" firstAttribute="top" secondItem="165-bt-GpA" secondAttribute="bottom" constant="65" id="RnG-EG-You"/>
+                            <constraint firstItem="Yn5-4N-OJh" firstAttribute="top" secondItem="7IL-wq-blP" secondAttribute="bottom" constant="99" id="WrL-2e-AXL"/>
+                            <constraint firstAttribute="centerX" secondItem="165-bt-GpA" secondAttribute="centerX" constant="0.5" id="XMf-Sw-fkV"/>
+                            <constraint firstAttribute="centerX" secondItem="Yn5-4N-OJh" secondAttribute="centerX" constant="0.5" id="Xkv-O1-fHW"/>
+                            <constraint firstAttribute="centerX" secondItem="UPB-6B-IO8" secondAttribute="centerX" id="rAU-a0-27t"/>
+                            <constraint firstAttribute="centerX" secondItem="M5V-Yd-sjA" secondAttribute="centerX" constant="1" id="uhb-tH-LEu"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="preparing" destination="M5V-Yd-sjA" id="6r7-dr-Xm9"/>
                         <outlet property="ready" destination="165-bt-GpA" id="0eo-5d-lHd"/>
                         <outlet property="restaurant" destination="UPB-6B-IO8" id="Vm8-dj-d6p"/>
                     </connections>

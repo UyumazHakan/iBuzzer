@@ -12,6 +12,7 @@ class OrderViewController: UIViewController {
  
     @IBOutlet weak var restaurant: UILabel!
     @IBOutlet weak var ready: UILabel!
+    @IBOutlet weak var preparing: UILabel!
     var restaurantName = ""
     var isNameSet = false
     var isReady = false
@@ -20,23 +21,37 @@ class OrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        updateRequestData()
-        while(!isNameSet) { }
-        restaurant.text = restaurantName
-        if isReady {
-            ready.hidden = false
-        } else {
-            ready.hidden = true
-        }
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND,0), {
+            while true {
+                
+                self.updateView()
+                sleep(3)
+            }
+        })
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
 
-    
+    func updateView() {
+        updateRequestData()
+        dispatch_async(dispatch_get_main_queue(), {
+            self.restaurant.text = self.restaurantName
+            if self.isReady {
+                self.ready.hidden = false
+                self.preparing.hidden = true
+            } else {
+                self.ready.hidden = true
+                self.preparing.hidden = false
+            }
+        })
+        //while(!isNameSet) { }
+        
+    }
     func updateRequestData(){
         var userID = UserManager.sharedInstance.user?.id
         var request = HTTPTask()
@@ -45,10 +60,13 @@ class OrderViewController: UIViewController {
             let data = response.responseObject as NSData
             let str = NSString(data: data, encoding: NSUTF8StringEncoding)
             let json = JSON.parse(str!)
-            print("--------RESPONSE--------")
+            println("--------RESPONSE--------")
             self.updateRestaurantName(json["RESTAURANT"].asInt!)
+            println(str)
             if (json["IS_DONE"].asInt! == 1) {
                 self.isReady = true
+            } else {
+                self.isReady = false
             }
             },failure: {(error: NSError, response: HTTPResponse?) in
                 let data = response!.responseObject as NSData
