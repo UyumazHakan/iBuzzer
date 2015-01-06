@@ -96,6 +96,19 @@ app.post("/done_request", function (req, res) {
         res.end(200)
     });
 })
+app.post("/user_request", function (req, res) {
+    var body = '';
+    req.on('data', function (data) {
+        body += data;
+        if (body.length > 1e6)
+            req.connection.destroy()
+    });
+    req.on('end', function () {
+        var post = qs.parse(body)
+        database.userRequest(post["user"])
+        res.end(200)
+    });
+})
 app.post("/register", function (req, res) {
     var body = '';
     req.on('data', function (data) {

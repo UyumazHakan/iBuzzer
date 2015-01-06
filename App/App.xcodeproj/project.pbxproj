@@ -18,6 +18,7 @@
 		E74BB27E1A4B0F9E0079644F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB27D1A4B0F9E0079644F /* MenuViewController.swift */; };
 		E74BB2801A4B1A630079644F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB27F1A4B1A630079644F /* User.swift */; };
 		E74BB2821A4B1C100079644F /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BB2811A4B1C100079644F /* JSON.swift */; };
+		E759291F1A5C503B00856CD8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759291E1A5C503B00856CD8 /* OrderViewController.swift */; };
 		E75BA0611A5AC5980063E9DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0601A5AC5980063E9DD /* Menu.swift */; };
 		E75BA0631A5AC5A60063E9DD /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0621A5AC5A60063E9DD /* Restaurant.swift */; };
 		E75BA0651A5B02CE0063E9DD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75BA0641A5B02CE0063E9DD /* UserManager.swift */; };
@@ -53,6 +54,7 @@
 		E74BB27D1A4B0F9E0079644F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E74BB27F1A4B1A630079644F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E74BB2811A4B1C100079644F /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		E759291E1A5C503B00856CD8 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		E75BA0601A5AC5980063E9DD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		E75BA0621A5AC5A60063E9DD /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E75BA0641A5B02CE0063E9DD /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E75BA0601A5AC5980063E9DD /* Menu.swift */,
 				E75BA0621A5AC5A60063E9DD /* Restaurant.swift */,
 				E75BA0641A5B02CE0063E9DD /* UserManager.swift */,
+				E759291E1A5C503B00856CD8 /* OrderViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				E75BA0611A5AC5980063E9DD /* Menu.swift in Sources */,
 				E7C3F79D1A5AB5320033317E /* HTTPTask.swift in Sources */,
 				E74BB27C1A4B0F780079644F /* RestaurantsViewController.swift in Sources */,
+				E759291F1A5C503B00856CD8 /* OrderViewController.swift in Sources */,
 				E74BB2781A4B0EEE0079644F /* LoginViewController.swift in Sources */,
 				E7C3F79E1A5AB5320033317E /* HTTPUpload.swift in Sources */,
 				E74BB2581A4B0BB20079644F /* AppDelegate.swift in Sources */,

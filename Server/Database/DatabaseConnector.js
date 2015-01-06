@@ -6,6 +6,7 @@ var GET_MENU_SECTION_SQL = "SELECT * FROM MENU_SECTION WHERE MENU=?"
 var GET_ITEMS_SQL = "SELECT * FROM SECTION_ITEM WHERE RESTAURANT=?"
 var ADD_REQUEST_SQL = "INSERT INTO REQUEST SET ?"
 var DONE_REQUEST_SQL = "UPDATE REQUEST SET IS_DONE=1 WHERE ID=?"
+var USER_REQUEST_SQL = "SELECT * FROM REQUEST WHERE IS_DONE=0 AND USER=?"
 var mysql = require('mysql')
 exports.restaurants = getRestaurants
 exports.auth = validateUserAuth
@@ -100,5 +101,14 @@ function doneRequest(id) {
     var values = [id]
     connection.query(DONE_REQUEST_SQL, values, function (err, results) {
         if (err) throw err
+    })
+}
+function getRequest(userID) {
+    var values = [userID]
+    connection.query(USER_REQUEST_SQL, values, function (err, rows, fields) {
+        if (err) throw err
+        var result = {ID: rows[0].ID, USER: rows[0].USER, RESTAURANT: rows[0].RESTAURANT}
+        console.log(JSON.stringify(results))
+        res.end(JSON.stringify(results))
     })
 }
