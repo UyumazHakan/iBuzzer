@@ -13,11 +13,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
     
     let domain = "http://localhost:5000"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loginButton.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +31,24 @@ class LoginViewController: UIViewController {
             login()
             
         }
+    }
+    @IBAction func check(sender: AnyObject) {
+        println("------CHECK LOGIN-----")
+        println(email.text)
+        println(password.text)
+        if email.text != "" && password.text != "" && isValidEmail(email.text) {
+            loginButton.enabled = true
+        } else {
+            loginButton.enabled = false
+        }
+    }
+    func isValidEmail(testStr:String) -> Bool {
+        println("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        
+        var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest!.evaluateWithObject(testStr)
+        return result
     }
     func login() {
         var emailText = email.text

@@ -39,18 +39,7 @@ class OrderViewController: UIViewController {
 
     func updateView() {
         updateRequestData()
-        dispatch_async(dispatch_get_main_queue(), {
-            self.restaurant.text = self.restaurantName
-            if self.isReady {
-                self.ready.hidden = false
-                self.preparing.hidden = true
-            } else {
-                self.ready.hidden = true
-                self.preparing.hidden = false
-            }
-        })
-        //while(!isNameSet) { }
-        
+
     }
     func updateRequestData(){
         var userID = UserManager.sharedInstance.user?.id
@@ -69,12 +58,8 @@ class OrderViewController: UIViewController {
                 self.isReady = false
             }
             },failure: {(error: NSError, response: HTTPResponse?) in
-                let data = response!.responseObject as NSData
-                let str = NSString(data: data, encoding: NSUTF8StringEncoding)
                 print("--------ERRORS--------")
                 print(error)
-                print("--------RESPONSE--------")
-                print(str)
         })
         
     }
@@ -89,7 +74,16 @@ class OrderViewController: UIViewController {
             print(str)
             self.restaurantName = self.getNameOfID(id, json: json)
             self.isNameSet = true
-
+            dispatch_async(dispatch_get_main_queue(), {
+                self.restaurant.text = self.restaurantName
+                if self.isReady {
+                    self.ready.hidden = false
+                    self.preparing.hidden = true
+                } else {
+                    self.ready.hidden = true
+                    self.preparing.hidden = false
+                }
+            })
             },failure: {(error: NSError, response: HTTPResponse?) in
                 let data = response!.responseObject as NSData
                 let str = NSString(data: data, encoding: NSUTF8StringEncoding)

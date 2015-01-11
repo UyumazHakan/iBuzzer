@@ -17,6 +17,7 @@ class RestaurantsViewController: UITableViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.title = UserManager.sharedInstance.user?.username
         let params: Dictionary<String,AnyObject> = [:]
         var request = HTTPTask()
         request.GET(domain+"/restaurants", parameters: params, success: {(response: HTTPResponse) in
@@ -27,7 +28,9 @@ class RestaurantsViewController: UITableViewController, UITableViewDelegate, UIT
             print("--------RESPONSE--------")
             print(str)
             self.createRestaurantList(jsonList)
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
             },failure: {(error: NSError, response: HTTPResponse?) in
                 let data = response!.responseObject as NSData
                 let str = NSString(data: data, encoding: NSUTF8StringEncoding)

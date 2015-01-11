@@ -59,13 +59,10 @@ class RegisterViewController: UIViewController {
             print("--------RESPONSE--------")
             print(str)
             },failure: {(error: NSError, response: HTTPResponse?) in
-                let data = response!.responseObject as NSData
-                let str = NSString(data: data, encoding: NSUTF8StringEncoding)
                 print("--------ERRORS--------")
                 print(error)
-                print("--------RESPONSE--------")
-                print(str)
         })
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func cancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
