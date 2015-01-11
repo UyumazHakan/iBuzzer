@@ -15,12 +15,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var password2: UITextField!
-
+    @IBOutlet weak var register: UIButton!
     
     let domain = "http://localhost:5000"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        register.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,6 +29,21 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func check(sender: AnyObject) {
+        if username.text != "" && name.text != "" && surname.text != "" && email.text != "" && password.text != "" && password2.text != "" && password.text == password2.text && isValidEmail(email.text) {
+            register.enabled = true
+        } else {
+            register.enabled = false
+        }
+    }
+    func isValidEmail(testStr:String) -> Bool {
+        println("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        
+        var emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest!.evaluateWithObject(testStr)
+        return result
+    }
     @IBAction func register(sender: AnyObject) {
         var usernameText = username.text
         var nameText = name.text

@@ -18,15 +18,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-7a-8Vy">
-                                <rect key="frame" x="252" y="93" width="97" height="30"/>
+                                <rect key="frame" x="16" y="93" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-0w-gy1">
-                                <rect key="frame" x="252" y="163" width="97" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rV5-3Q-SWr">
                                 <rect key="frame" x="272" y="519" width="57" height="30"/>
@@ -46,15 +40,23 @@
                                     <segue destination="Od4-01-NVB" kind="showDetail" identifier="Login" id="7U3-2h-gdk"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-0w-gy1">
+                                <rect key="frame" x="16" y="174" width="568" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rV5-3Q-SWr" secondAttribute="bottom" constant="51" id="8WH-Mx-rhz"/>
-                            <constraint firstItem="pT1-0w-gy1" firstAttribute="top" secondItem="cBb-7a-8Vy" secondAttribute="bottom" constant="40" id="JHt-Dq-DsB"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pT1-0w-gy1" secondAttribute="bottom" constant="396" id="IuA-Su-Rer"/>
                             <constraint firstAttribute="centerX" secondItem="cBb-7a-8Vy" secondAttribute="centerX" constant="-0.5" id="ar1-uC-jdy"/>
                             <constraint firstItem="rV5-3Q-SWr" firstAttribute="top" secondItem="XIp-Ef-oeJ" secondAttribute="bottom" constant="8" id="cbw-Ux-Ddx"/>
                             <constraint firstAttribute="centerX" secondItem="XIp-Ef-oeJ" secondAttribute="centerX" constant="4" id="fbP-gT-VfZ"/>
                             <constraint firstAttribute="centerX" secondItem="rV5-3Q-SWr" secondAttribute="centerX" id="ftv-gN-deC"/>
+                            <constraint firstItem="pT1-0w-gy1" firstAttribute="top" secondItem="cBb-7a-8Vy" secondAttribute="bottom" constant="51" id="h1M-zP-E5B"/>
+                            <constraint firstAttribute="centerX" secondItem="pT1-0w-gy1" secondAttribute="centerX" id="hfI-Re-6ev"/>
                             <constraint firstItem="cBb-7a-8Vy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="73" id="t7e-Gy-8KH"/>
                             <constraint firstAttribute="centerX" secondItem="pT1-0w-gy1" secondAttribute="centerX" constant="-0.5" id="ys0-MN-gl1"/>
                         </constraints>
@@ -259,31 +261,49 @@
                                 <rect key="frame" x="16" y="323" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingDidEnd" id="Oil-hj-2nX"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPO-KT-cKD">
                                 <rect key="frame" x="16" y="209" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingDidEnd" id="DCo-7H-z5y"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-9O-Ia5">
                                 <rect key="frame" x="16" y="247" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingDidEnd" id="QGT-eJ-ISA"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaB-oZ-4Vt">
                                 <rect key="frame" x="16" y="285" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingDidEnd" id="Yyp-ol-Y0r"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-qy-qgH">
                                 <rect key="frame" x="16" y="361" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingDidEnd" id="aYS-32-aL9"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFF-7f-dVA">
                                 <rect key="frame" x="16" y="171" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="check:" destination="WHl-mf-yzb" eventType="editingChanged" id="LZQ-k5-gm4"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-dg-jTl">
                                 <rect key="frame" x="272" y="399" width="57" height="30"/>
@@ -340,6 +360,7 @@
                         <outlet property="name" destination="JPO-KT-cKD" id="Vsv-2E-qlq"/>
                         <outlet property="password" destination="Mip-5J-Iyy" id="eKu-vR-N82"/>
                         <outlet property="password2" destination="SN1-qy-qgH" id="ejm-wz-TOj"/>
+                        <outlet property="register" destination="eSN-dg-jTl" id="ltP-pK-BtS"/>
                         <outlet property="surname" destination="p5p-9O-Ia5" id="etj-uh-dxM"/>
                         <outlet property="username" destination="CFF-7f-dVA" id="hQ8-Iv-MIu"/>
                     </connections>
