@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-7a-8Vy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-7a-8Vy">
                                 <rect key="frame" x="16" y="93" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -43,7 +43,7 @@
                                     <segue destination="Od4-01-NVB" kind="showDetail" identifier="Login" id="7U3-2h-gdk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-0w-gy1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT1-0w-gy1">
                                 <rect key="frame" x="16" y="174" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -56,13 +56,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rV5-3Q-SWr" secondAttribute="bottom" constant="51" id="8WH-Mx-rhz"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pT1-0w-gy1" secondAttribute="bottom" constant="396" id="IuA-Su-Rer"/>
+                            <constraint firstItem="cBb-7a-8Vy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="FA3-r8-Lmn"/>
+                            <constraint firstItem="cBb-7a-8Vy" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Ib7-Mo-4ms"/>
+                            <constraint firstItem="pT1-0w-gy1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="NTq-EG-gtV"/>
                             <constraint firstAttribute="centerX" secondItem="cBb-7a-8Vy" secondAttribute="centerX" constant="-0.5" id="ar1-uC-jdy"/>
                             <constraint firstItem="rV5-3Q-SWr" firstAttribute="top" secondItem="XIp-Ef-oeJ" secondAttribute="bottom" constant="8" id="cbw-Ux-Ddx"/>
                             <constraint firstAttribute="centerX" secondItem="XIp-Ef-oeJ" secondAttribute="centerX" constant="4" id="fbP-gT-VfZ"/>
                             <constraint firstAttribute="centerX" secondItem="rV5-3Q-SWr" secondAttribute="centerX" id="ftv-gN-deC"/>
                             <constraint firstItem="pT1-0w-gy1" firstAttribute="top" secondItem="cBb-7a-8Vy" secondAttribute="bottom" constant="51" id="h1M-zP-E5B"/>
                             <constraint firstAttribute="centerX" secondItem="pT1-0w-gy1" secondAttribute="centerX" id="hfI-Re-6ev"/>
+                            <constraint firstItem="pT1-0w-gy1" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="p9t-wT-jE2"/>
                             <constraint firstItem="cBb-7a-8Vy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="73" id="t7e-Gy-8KH"/>
                             <constraint firstAttribute="centerX" secondItem="pT1-0w-gy1" secondAttribute="centerX" constant="-0.5" id="ys0-MN-gl1"/>
                         </constraints>
